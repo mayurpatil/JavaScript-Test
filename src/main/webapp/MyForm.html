@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Registration Form</title>
+  <H4 align="center">
+    Registration Form
+  </H4>
+  <script>
+       
+    function validateEmail()
+{
+ 
+   var emailID = document.MyForm.txtEmail.value;
+   atpos = emailID.indexOf("@");
+   dotpos = emailID.lastIndexOf(".");
+   if (atpos < 1 || ( dotpos - atpos < 2 )) 
+   {
+       alert("Please enter correct email ID")
+       document.MyForm.txtEmail.focus() ;
+       return false;
+   }
+   return( true );
+}
+    
+    
+    
+    function validate()
+{
+ 
+   if(document.MyForm.txtName.value == "" )
+   {
+     alert( "Please provide your name!" );
+     document.MyForm.txtName.focus() ;
+     return false;
+   }
+  else
+    {
+      var letters = "/^[a-zA-Z]+/";  
+      if(document.MyForm.txtName.value.match(letters))  
+      {
+        alert( "Please provide your name with alphabets only!" );
+     document.MyForm.txtName.focus() ;
+     return false;
+      }
+      
+    }
+  
+   if(document.MyForm.txtEmail.value == "" )
+   {
+     alert( "Please provide your email-id!" );
+     document.MyForm.txtEmail.focus() ;
+     return false;
+   }
+ else{
+     var ret = validateEmail();
+     if( ret == false )
+     {
+          return false;
+     }
+ }
+  
+  if(document.MyForm.mobile.value == "" )
+   {
+     alert( "Please provide your mobile number" );
+     document.MyForm.mobile.focus() ;
+     return false;
+   }
+  
+  if(document.MyForm.mobile.value != "" )
+   {
+     var cellnum=document.MyForm.mobile.value;
+     if(cellnum.length != 10){
+     alert( "Please provide your correct mobile number" );
+     document.MyForm.mobile.focus() ;
+     return false;
+     }
+   }
+  
+  if(document.MyForm.txtAbility.value == "" )
+   {
+     alert( "Please describe your ability in less than 200 words" );
+     document.MyForm.txtAbility.focus() ;
+     return false;
+   }
+  
+  if(document.MyForm.txtAbility.value != "" )
+   {
+     var str =document.MyForm.txtAbility.value;
+     var arr = str.split(" ");
+     if(!(arr.length > 100 && arr.length<200)){
+     alert( "Please describe your ability in less than 200 words" );
+     document.MyForm.txtAbility.focus() ;
+     return false;
+     }
+   }
+  
+  
+  
+    return (true);
+  
+  
+  
+}
+  
+  </script>
+  
+</head>
+  <center>
+            
+    
+<body>
+  <form name="MyForm" onsubmit="return(validate());">
+  <table border="1">
+    <tr>
+    <td> Enter name in full
+      </td>
+      <td>
+      <input type="text" name="txtName" autofocus>
+      </td>
+    </tr>
+    
+    <tr>
+    <td>
+      Sex </td>
+    <td>
+      Male <input type="radio" name="sex" value="Male" checked>
+      Female <input type="radio" name="sex" value="Female">
+      </td>
+    </tr>
+    
+    <tr>
+    <td>
+      Eye Color
+      </td>
+    <td>
+      <select>
+        <option>Brown</option>
+        <option>Blue</option>
+        <option>Green</option>
+        <option>Others</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Email Id</td>
+       <td><input name="txtEmail" type="text" placeholder="abc@sdmcet.ac.in"></td>
+    </tr>
+    <tr>
+      <td>Mobile Number (+91) </td>
+       <td><input type="number" name="mobile" ></td>
+    </tr>
+    
+    <tr>
+    <td>Describe your athletic ability </td>
+    <td> <textarea required placeholder="Between 100 to 200 words" name="txtAbility"> </textarea></td>
+    </tr>
+    
+    
+  </table>
+  <table>
+    <tr> <td> <input type="submit" title = "Save my information" Value="Save"></td></tr>
+  </table>
+</form>
+</body>
+    </center>
+</html>

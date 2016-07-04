@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Best of TWO</title>
+  <H4 align="center">
+    Average of TWO better tests
+  </H4>   
+</head>
+   <center>
+<body>
+     <script>
+    function calculate()
+    {
+  var m1,m2,m3;
+    m1 = parseInt(document.myForm.txtM1.value);
+    m2 = parseInt(document.myForm.txtM2.value);
+    m3 = parseInt(document.myForm.txtM3.value);
+  
+      var result = (v1 + v2 + v3) - parseInt(Math.min(v1, v2, v3));
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>  
+    
+  <form name="myForm">
+      
+<table border="1">
+  <tr>
+  <td>
+    Enter USN :
+    </td>
+    <td>
+    <input type="text" name="txtUSN">
+    </td>
+  </tr>
+  
+  <tr>
+  <td>Enter Sub Code
+    </td>
+    <td>
+    <input type="text" name="txtSubCode">
+    </td>
+    </tr>
+  
+  <tr>
+  <td>Marks 1</td>
+  <td><input type="text" name="txtM1"> </td>
+  </tr>
+  <tr>
+  <td>Marks 2</td>
+  <td><input type="text" name="txtM2"> </td>
+  </tr>
+  <tr>
+  <td>Marks 3</td>
+  <td><input type="text" name="txtM3"> </td>
+  </tr>
+  
+  <tr>
+  <td>Best of above TWO is </td>
+  <td><p id="result"></p></td>
+  </tr>
+  
+  </table>
+  <table>
+    <tr><td><input type="button" value="Calculate" onclick="calculate();"></td></tr>
+    </table>
+  </form>
+</body></center>
+</html>
